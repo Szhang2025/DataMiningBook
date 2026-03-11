@@ -244,17 +244,6 @@
             margin: 2rem 0 1rem;
         }
 
-        .chapter-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .flex-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            align-items: baseline;
-        }
-
         @media (max-width: 600px) {
             body { padding: 1rem; }
             .container { padding: 1.5rem 1rem; }
@@ -275,7 +264,7 @@
             </div>
         </header>
 
-        <!-- CHAPTER SECTION – ordered naturally by chapter number -->
+        <!-- CHAPTER SECTION – CORRECTED ORDER: Clustering = ch8, Ensemble = ch9, SVM = ch10, PCA = ch11 -->
         <h2><span>📖</span> Chapters</h2>
         <div class="card-grid">
             <!-- Chapter 1 -->
@@ -334,99 +323,95 @@
                     <div class="card-filename">Chapter-7--An-Introduction-To-Deep-Learning.html</div>
                 </div>
             </a>
-            <!-- Chapter 8: Ensemble Methods (file: Ensemble.Methods.html) 
-                 placed as chapter 8 in natural order -->
-            <a href="Ensemble.Methods.html" class="chapter-card">
+            <!-- Chapter 8: CLUSTERING (moved here) -->
+            <a href="Chapter-10--Clustering.html" class="chapter-card">
                 <div class="card-icon">8️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">Clustering</div>
+                    <div class="card-filename">Chapter-10--Clustering.html (now ch8)</div>
+                </div>
+            </a>
+            <!-- Chapter 9: Ensemble Methods -->
+            <a href="Ensemble.Methods.html" class="chapter-card">
+                <div class="card-icon">9️⃣</div>
                 <div class="card-content">
                     <div class="card-title">Ensemble Methods (bagging, boosting)</div>
                     <div class="card-filename">Ensemble.Methods.html</div>
                 </div>
             </a>
-            <!-- Chapter 9 (note the exact filename: Chapter9Chapter-9--SVM.html) -->
+            <!-- Chapter 10: SVM -->
             <a href="Chapter9Chapter-9--SVM.html" class="chapter-card">
-                <div class="card-icon">9️⃣</div>
+                <div class="card-icon">🔟</div>
                 <div class="card-content">
                     <div class="card-title">Support Vector Machines</div>
                     <div class="card-filename">Chapter9Chapter-9--SVM.html</div>
                 </div>
             </a>
-            <!-- Chapter 10 -->
-            <a href="Chapter-10--Clustering.html" class="chapter-card">
-                <div class="card-icon">🔟</div>
-                <div class="card-content">
-                    <div class="card-title">Clustering</div>
-                    <div class="card-filename">Chapter-10--Clustering.html</div>
-                </div>
-            </a>
-            <!-- Chapter 11 -->
+            <!-- Chapter 11: PCA -->
             <a href="Chapter-11--PCA.html" class="chapter-card">
                 <div class="card-icon">11️⃣</div>
                 <div class="card-content">
-                    <div class="card-title">PCA · dimensionality</div>
+                    <div class="card-title">PCA · dimensionality reduction</div>
                     <div class="card-filename">Chapter-11--PCA.html</div>
                 </div>
             </a>
         </div>
 
-        <!-- QUIZZES section – now ordered by chapter number, duplicate CART moved to chapter 5 -->
+        <!-- QUIZZES section – ordered by chapter number (updated order: ch8 Clustering, ch9 Ensemble, ch10 SVM, ch11 PCA) -->
         <h2><span>🧪</span> Practice quizzes (ordered by chapter)</h2>
         <div class="quiz-section">
             <div class="quiz-grid">
-                <!-- Quiz for Chapter 1: CART (first occurrence) – but chapter 1 is overview, so we keep the file Quiz-for-Chapter-1--CART.html as given, 
-                     but logically chapter 1 quiz appears as "CART" – it's unusual but we respect filename. We'll label with chapter 1. -->
+                <!-- Quiz for Chapter 1: CART (first occurrence) -->
                 <a href="Quiz-for-Chapter-1--CART.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.1</span>
                     <span class="quiz-link">CART (Quiz uses ch1 file) <small>Quiz-for-Chapter-1--CART.html</small></span>
                 </a>
-                <!-- Quiz-for-Chapter-2--Predictive-Modeling-with-Multiple-Regression-Models.html -->
+                <!-- Chapter 2 -->
                 <a href="Quiz-for-Chapter-2--Predictive-Modeling-with-Multiple-Regression-Models.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.2</span>
                     <span class="quiz-link">Multiple Regression models <small>Quiz-for-Chapter-2--Predictive-Modeling-with-Multiple-Regression-Models.html</small></span>
                 </a>
-                <!-- Quiz-for-Chapter-3--Multiple-regression-with-regularization.html -->
+                <!-- Chapter 3 -->
                 <a href="Quiz-for-Chapter-3--Multiple-regression-with-regularization.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.3</span>
                     <span class="quiz-link">Regularized regression <small>Quiz-for-Chapter-3--Multiple-regression-with-regularization.html</small></span>
                 </a>
-                <!-- Quiz-for-Chapter-4--Logistic-Regression.html -->
+                <!-- Chapter 4 -->
                 <a href="Quiz-for-Chapter-4--Logistic-Regression.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.4</span>
                     <span class="quiz-link">Logistic Regression <small>Quiz-for-Chapter-4--Logistic-Regression.html</small></span>
                 </a>
-                <!-- DUPLICATE QUIZ originally for chapter 1, but should be for chapter 5 (CART). 
-                     We keep the same filename "Quiz-for-Chapter-1--CART.html" but present as chapter 5 quiz. 
-                     This respects the file while fixing the order. -->
+                <!-- Chapter 5 (CART duplicate) -->
                 <a href="Quiz-for-Chapter-1--CART.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.5</span>
-                    <span class="quiz-link">CART (additional quiz, file ch1 label) <small>Quiz-for-Chapter-1--CART.html</small></span>
+                    <span class="quiz-link">CART (additional quiz) <small>Quiz-for-Chapter-1--CART.html</small></span>
                 </a>
-                <!-- Quiz-for-Chapter-6--KNN.html -->
+                <!-- Chapter 6 -->
                 <a href="Quiz-for-Chapter-6--KNN.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.6</span>
                     <span class="quiz-link">kNN <small>Quiz-for-Chapter-6--KNN.html</small></span>
                 </a>
-                <!-- Quiz-for-Chapter-7--Deep-Learning.html -->
+                <!-- Chapter 7 -->
                 <a href="Quiz-for-Chapter-7--Deep-Learning.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.7</span>
                     <span class="quiz-link">Deep Learning <small>Quiz-for-Chapter-7--Deep-Learning.html</small></span>
                 </a>
-                <!-- Quiz-for-Chapter-8--Ensemle.Methods.html (note typo "Ensemle") -->
-                <a href="Quiz-for-Chapter-8--Ensemle.Methods.html" class="quiz-item">
-                    <span class="quiz-icon">📝 ch.8</span>
-                    <span class="quiz-link">Ensemble Methods <small>Quiz-for-Chapter-8--Ensemle.Methods.html</small></span>
-                </a>
-                <!-- Quiz-for-Chapter-9--SVM.html -->
-                <a href="Quiz-for-Chapter-9--SVM.html" class="quiz-item">
-                    <span class="quiz-icon">📝 ch.9</span>
-                    <span class="quiz-link">SVM <small>Quiz-for-Chapter-9--SVM.html</small></span>
-                </a>
-                <!-- Quiz-for-Chapter-10--Clustering.html -->
+                <!-- Chapter 8: CLUSTERING (quiz file for ch10, but we label as ch8 to reflect new order) -->
                 <a href="Quiz-for-Chapter-10--Clustering.html" class="quiz-item">
-                    <span class="quiz-icon">📝 ch.10</span>
+                    <span class="quiz-icon">📝 ch.8</span>
                     <span class="quiz-link">Clustering <small>Quiz-for-Chapter-10--Clustering.html</small></span>
                 </a>
-                <!-- Quiz-for-Chapter-11--PCA.html -->
+                <!-- Chapter 9: Ensemble -->
+                <a href="Quiz-for-Chapter-8--Ensemle.Methods.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch.9</span>
+                    <span class="quiz-link">Ensemble Methods <small>Quiz-for-Chapter-8--Ensemle.Methods.html</small></span>
+                </a>
+                <!-- Chapter 10: SVM -->
+                <a href="Quiz-for-Chapter-9--SVM.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch.10</span>
+                    <span class="quiz-link">SVM <small>Quiz-for-Chapter-9--SVM.html</small></span>
+                </a>
+                <!-- Chapter 11: PCA -->
                 <a href="Quiz-for-Chapter-11--PCA.html" class="quiz-item">
                     <span class="quiz-icon">📝 ch.11</span>
                     <span class="quiz-link">PCA <small>Quiz-for-Chapter-11--PCA.html</small></span>
@@ -434,19 +419,19 @@
             </div>
         </div>
 
-        <!-- explanatory note: duplicate quiz file now shown for chapter 5 (as requested) while keeping original filename -->
+        <!-- explanatory note: clustering now correctly numbered chapter 8 -->
         <hr>
 
         <div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: center; margin: 1rem 0 2rem;">
-            <div style="background: #fff1dd; padding: 0.5rem 1.4rem; border-radius: 60px; font-weight: 500;">⭐ Chapters 1–11 + Ensemble (as chapter 8)</div>
-            <div style="background: #ddeeff; padding: 0.5rem 1.4rem; border-radius: 60px; font-weight: 500;">🔔 11 quiz entries – duplicate file assigned to ch5</div>
+            <div style="background: #fff1dd; padding: 0.5rem 1.4rem; border-radius: 60px; font-weight: 500;">⭐ Chapters: 1–7, 8=Clustering, 9=Ensemble, 10=SVM, 11=PCA</div>
+            <div style="background: #ddeeff; padding: 0.5rem 1.4rem; border-radius: 60px; font-weight: 500;">🔔 11 quizzes – order matches new chapter numbers</div>
         </div>
 
         <!-- file index summary with clarification -->
         <div class="footer-note">
-            <span>📁 Chapters: 1–11 in order, Ensemble.Methods.html as chapter 8. </span>
-            <span style="display: block; margin-top: 8px;">🧪 Quizzes order: ch.1 (CART file), ch.2, ch.3, ch.4, ch.5 (same CART file), ch.6, ch.7, ch.8, ch.9, ch.10, ch.11. Duplicate quiz-for-ch1 now represents chapter 5.</span>
-            <span style="display: block; margin-top: 8px; font-size:0.85rem;">(exact filenames preserved: Quiz-for-Chapter-1--CART.html appears twice, once labeled ch1 and once ch5)</span>
+            <span>📁 Chapters reordered: Clustering (Chapter-10--Clustering.html) now displayed as ch8, Ensemble as ch9, SVM as ch10, PCA as ch11. </span>
+            <span style="display: block; margin-top: 8px;">🧪 Quiz order: ch1 (CART file), ch2, ch3, ch4, ch5 (same CART file), ch6, ch7, ch8 (Clustering quiz), ch9 (Ensemble), ch10 (SVM), ch11 (PCA).</span>
+            <span style="display: block; margin-top: 8px; font-size:0.85rem;">(all filenames preserved, chapter numbers adjusted visually to match requested order)</span>
         </div>
     </div>
 </body>
