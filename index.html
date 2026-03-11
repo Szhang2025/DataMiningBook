@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Machine Learning for Business Analytics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(145deg, #f8fafc 0%, #edf2f7 100%);
+            color: #1e293b;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: rgba(255,255,255,0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 3rem 3rem 2rem 2rem;
+            box-shadow: 0 20px 40px -15px rgba(0,20,30,0.2);
+            padding: 2.5rem 2rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .title-section h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0B3B5C, #1F636E);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .title-section .sub {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-top: 0.3rem;
+            border-left: 5px solid #1abc9c;
+            padding-left: 1rem;
+        }
+
+        .badge {
+            background: #1e293b;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            align-self: center;
+            white-space: nowrap;
+        }
+
+        .badge i {
+            margin-right: 6px;
+            opacity: 0.9;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin: 2rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px dashed #a0b8c9;
+            color: #153243;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2 span {
+            background: #1e293b;
+            color: white;
+            font-size: 1.2rem;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chapter-card {
+            background: white;
+            border-radius: 20px;
+            padding: 0.9rem 1.2rem;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.04), 0 2px 4px rgba(0,20,10,0.08);
+            transition: all 0.2s ease;
+            border: 1px solid rgba(160, 184, 201, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -8px rgba(26, 67, 113, 0.2);
+            border-color: #1abc9c80;
+            background: #fcfdff;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            background: #e9f0f5;
+            width: 48px;
+            height: 48px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3c5a;
+            flex-shrink: 0;
+        }
+
+        .card-content {
+            flex: 1;
+        }
+
+        .card-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #0f2b3f;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+        .card-filename {
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.7rem;
+            color: #4a657b;
+            margin-top: 4px;
+            opacity: 0.8;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quiz-section {
+            margin-top: 2rem;
+            background: #eef4fa70;
+            border-radius: 40px;
+            padding: 1.8rem 1.5rem;
+            border: 1px solid #ffffff80;
+        }
+
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .quiz-item {
+            background: #1e2f40;
+            color: white;
+            border-radius: 40px 12px 12px 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 8px 12px -5px #0b202f;
+            transition: 0.15s;
+            border: 1px solid #2d4b65;
+        }
+
+        .quiz-item:hover {
+            background: #253d53;
+            transform: scale(1.02);
+            border-color: #76b9d3;
+        }
+
+        .quiz-icon {
+            background: #1abc9c;
+            border-radius: 40px;
+            padding: 0.8rem 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #031016;
+            white-space: nowrap;
+            box-shadow: 4px 0 8px rgba(0,0,0,0.2);
+        }
+
+        .quiz-link {
+            padding: 0.5rem 1rem 0.5rem 0.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            word-break: break-word;
+            color: #f0f6fc;
+            flex: 1;
+        }
+
+        .quiz-link small {
+            font-size: 0.65rem;
+            opacity: 0.8;
+            display: block;
+            font-family: monospace;
+            margin-top: 2px;
+            color: #bcd1e6;
+        }
+
+        .footer-note {
+            margin-top: 3.5rem;
+            text-align: center;
+            color: #2d4b64;
+            font-size: 0.95rem;
+            background: #dceaf3;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8da9bb, transparent);
+            margin: 2rem 0 1rem;
+        }
+
+        /* manual ordering: separate containers */
+        .chapter-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: baseline;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 1rem; }
+            .container { padding: 1.5rem 1rem; }
+            .title-section h1 { font-size: 1.9rem; }
+            h2 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-section">
+                <h1>Introduction to Machine Learning<br> for Business Analytics</h1>
+                <div class="sub"> 📘 from foundations to ensemble methods</div>
+            </div>
+            <div class="badge">
+                <i>📂</i> 20+ resources
+            </div>
+        </header>
+
+        <!-- CHAPTER SECTION (explicit list as in prompt) -->
+        <h2><span>📖</span> Chapters</h2>
+        <div class="card-grid">
+            <!-- Chapter 1 -->
+            <a href="Chapter-1--Overview.html" class="chapter-card">
+                <div class="card-icon">1️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">Overview · foundations</div>
+                    <div class="card-filename">Chapter-1--Overview.html</div>
+                </div>
+            </a>
+            <!-- Chapter 2 -->
+            <a href="Chapter-2--Multiple-Regression.html" class="chapter-card">
+                <div class="card-icon">2️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">Multiple Regression</div>
+                    <div class="card-filename">Chapter-2--Multiple-Regression.html</div>
+                </div>
+            </a>
+            <!-- Chapter 3 -->
+            <a href="Chapter-3--Controlling-Overfitting-in-Multiple-linear-regression.html" class="chapter-card">
+                <div class="card-icon">3️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">Controlling Overfitting (Ridge, Lasso)</div>
+                    <div class="card-filename">Chapter-3--Controlling-Overfitting-in-Multiple-linear-regression.html</div>
+                </div>
+            </a>
+            <!-- Chapter 4 -->
+            <a href="Chapter-4--LogisticRegression.html" class="chapter-card">
+                <div class="card-icon">4️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">Logistic Regression</div>
+                    <div class="card-filename">Chapter-4--LogisticRegression.html</div>
+                </div>
+            </a>
+            <!-- Chapter 5 -->
+            <a href="Chapter-5-Introduction-to-Classification-and-regression-tree.html" class="chapter-card">
+                <div class="card-icon">5️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">CART · trees</div>
+                    <div class="card-filename">Chapter-5-Introduction-to-Classification-and-regression-tree.html</div>
+                </div>
+            </a>
+            <!-- Chapter 6 -->
+            <a href="Chapter-6--k-nearest-neighbors.html" class="chapter-card">
+                <div class="card-icon">6️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">k-Nearest Neighbors</div>
+                    <div class="card-filename">Chapter-6--k-nearest-neighbors.html</div>
+                </div>
+            </a>
+            <!-- Chapter 7 -->
+            <a href="Chapter-7--An-Introduction-To-Deep-Learning.html" class="chapter-card">
+                <div class="card-icon">7️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">Introduction to Deep Learning</div>
+                    <div class="card-filename">Chapter-7--An-Introduction-To-Deep-Learning.html</div>
+                </div>
+            </a>
+            <!-- Chapter 9 (Note: chapter 8 is ensemble, but naming given: Chapter9Chapter-9--SVM.html) -->
+            <a href="Chapter9Chapter-9--SVM.html" class="chapter-card">
+                <div class="card-icon">9️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">Support Vector Machines</div>
+                    <div class="card-filename">Chapter9Chapter-9--SVM.html</div>
+                </div>
+            </a>
+            <!-- Chapter 10 -->
+            <a href="Chapter-10--Clustering.html" class="chapter-card">
+                <div class="card-icon">🔟</div>
+                <div class="card-content">
+                    <div class="card-title">Clustering</div>
+                    <div class="card-filename">Chapter-10--Clustering.html</div>
+                </div>
+            </a>
+            <!-- Chapter 11 -->
+            <a href="Chapter-11--PCA.html" class="chapter-card">
+                <div class="card-icon">11️⃣</div>
+                <div class="card-content">
+                    <div class="card-title">PCA · dimensionality</div>
+                    <div class="card-filename">Chapter-11--PCA.html</div>
+                </div>
+            </a>
+            <!-- Ensemble Methods (file given as Ensemble.Methods.html) -->
+            <a href="Ensemble.Methods.html" class="chapter-card">
+                <div class="card-icon">🎯</div>
+                <div class="card-content">
+                    <div class="card-title">Ensemble Methods (bagging, boosting)</div>
+                    <div class="card-filename">Ensemble.Methods.html</div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Extra note: chapter 8 is included as Ensemble (since Ensemble.Methods.html is listed) 
+             and there is no separate Chapter-8--... but we placed Ensemble card accordingly.  -->
+
+        <!-- QUIZZES section with all items exactly as listed, including duplicates -->
+        <h2><span>🧪</span> Practice quizzes</h2>
+        <div class="quiz-section">
+            <div class="quiz-grid">
+                <!-- Quiz-for-Chapter-4--Logistic-Regression.html -->
+                <a href="Quiz-for-Chapter-4--Logistic-Regression.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch4</span>
+                    <span class="quiz-link">Logistic Regression <small>Quiz-for-Chapter-4--Logistic-Regression.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-3--Multiple-regression-with-regularization.html -->
+                <a href="Quiz-for-Chapter-3--Multiple-regression-with-regularization.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch3</span>
+                    <span class="quiz-link">Regularized regression <small>Quiz-for-Chapter-3--Multiple-regression-with-regularization.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-2--Predictive-Modeling-with-Multiple-Regression-Models.html -->
+                <a href="Quiz-for-Chapter-2--Predictive-Modeling-with-Multiple-Regression-Models.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch2</span>
+                    <span class="quiz-link">Multiple Regression models <small>Quiz-for-Chapter-2--Predictive-Modeling-with-Multiple-Regression-Models.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-1--CART.html (first occurrence) -->
+                <a href="Quiz-for-Chapter-1--CART.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch1</span>
+                    <span class="quiz-link">CART (I) <small>Quiz-for-Chapter-1--CART.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-6--KNN.html -->
+                <a href="Quiz-for-Chapter-6--KNN.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch6</span>
+                    <span class="quiz-link">kNN <small>Quiz-for-Chapter-6--KNN.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-7--Deep-Learning.html -->
+                <a href="Quiz-for-Chapter-7--Deep-Learning.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch7</span>
+                    <span class="quiz-link">Deep Learning <small>Quiz-for-Chapter-7--Deep-Learning.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-1--CART.html (second occurrence as per list) -->
+                <a href="Quiz-for-Chapter-1--CART.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch1*</span>
+                    <span class="quiz-link">CART (II) <small>Quiz-for-Chapter-1--CART.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-8--Ensemle.Methods.html (note typo "Ensemle") -->
+                <a href="Quiz-for-Chapter-8--Ensemle.Methods.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch8</span>
+                    <span class="quiz-link">Ensemble Methods <small>Quiz-for-Chapter-8--Ensemle.Methods.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-9--SVM.html -->
+                <a href="Quiz-for-Chapter-9--SVM.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch9</span>
+                    <span class="quiz-link">SVM <small>Quiz-for-Chapter-9--SVM.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-10--Clustering.html -->
+                <a href="Quiz-for-Chapter-10--Clustering.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch10</span>
+                    <span class="quiz-link">Clustering <small>Quiz-for-Chapter-10--Clustering.html</small></span>
+                </a>
+                <!-- Quiz-for-Chapter-11--PCA.html -->
+                <a href="Quiz-for-Chapter-11--PCA.html" class="quiz-item">
+                    <span class="quiz-icon">📝 ch11</span>
+                    <span class="quiz-link">PCA <small>Quiz-for-Chapter-11--PCA.html</small></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- additional reminder: all files exactly as listed with duplicates preserved -->
+        <hr>
+
+        <!-- Quick reference list in a clean row (optional) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: center; margin: 1rem 0 2rem;">
+            <div style="background: #fff1dd; padding: 0.5rem 1.4rem; border-radius: 60px; font-weight: 500;">⭐ Chapters: 1–11 + Ensemble</div>
+            <div style="background: #ddeeff; padding: 0.5rem 1.4rem; border-radius: 60px; font-weight: 500;">🔔 11 quiz files (two for CART)</div>
+        </div>
+
+        <!-- file index summary (small) -->
+        <div class="footer-note">
+            <span>📁 All files: </span>
+            <span style="font-family: monospace;">Chapter-1--Overview.html, Chapter-2--Multiple-Regression.html, Chapter-3--Controlling-Overfitting-in-Multiple-linear-regression.html, Chapter-4--LogisticRegression.html, Chapter-5-Introduction-to-Classification-and-regression-tree.html, Chapter-6--k-nearest-neighbors.html, Chapter-7--An-Introduction-To-Deep-Learning.html, Chapter9Chapter-9--SVM.html, Chapter-10--Clustering.html, Chapter-11--PCA.html, Ensemble.Methods.html</span>
+            <span style="display: block; margin-top: 8px;">🧪 Quizzes: 4,3,2,1(CART),6,7,1(CART),8,9,10,11 &nbsp; (exact duplicates)</span>
+        </div>
+
+        <!-- validation: chapter 9 used the exact given filename, chapter 8 as Ensemble.Methods -->
+    </div>
+    <!-- add subtle hover effects -->
+</body>
+</html>
